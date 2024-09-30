@@ -384,7 +384,9 @@
         });
     });
     $(window).on("scroll", function () {
-      $(".embeddedAdImgContainer").slick("slickPlay"); // 重新啟動自動播放
+       if ($('.embeddedAdImgContainer').hasClass('slick-initialized')) {
+          $(".embeddedAdImgContainer").slick("slickPlay"); // 重新啟動自動播放
+       }
     });
     const getEmbeddedAds = () => {
       const requestData = {
