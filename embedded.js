@@ -383,8 +383,6 @@
         });
     });
     $(document).on("click", ".embeddedItem", function () {
-      console.log("Embedded item clicked");
-      console.log($(this));
       const title = $(this).data("title"); // 取得 data-title 屬性
       const link = $(this).data("link"); // 取得 data-link 屬性
 
@@ -398,21 +396,19 @@
     });
     $(document).on("click", ".a-left", function () {
       // 觸發 Google Analytics 的事件追蹤
-      console.log("Embedded item clicked left");
       gtag("event", "click_embedded_item", {
         send_to: "G-PQQRC09ZPS",
         event_category: "embedded",
-        event_label: 'arrow',
+        event_label: 'arrow-left',
         event_value: 'left',
       });
     });
     $(document).on("click", ".a-right", function () {
       // 觸發 Google Analytics 的事件追蹤
-      console.log("Embedded item clicked right");
       gtag("event", "click_embedded_item", {
         send_to: "G-PQQRC09ZPS",
         event_category: "embedded",
-        event_label: 'arrow',
+        event_label: 'arrow-right',
         event_value: 'right',
       });
     });
