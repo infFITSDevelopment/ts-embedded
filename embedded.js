@@ -431,7 +431,10 @@
         .map(
           (img) =>
             `
-        <a class="embeddedItem slickSlide" href="${img.link})" target="_blank">
+        <a class="embeddedItem slickSlide" href="${img.link})" target="_blank" onclick="gtag('event', 'click_embedded_item', {
+        'embedded_title': "${img.title}",
+        'embedded_link': "${img.link}",
+      });">
             <div class="embeddedItem__img">
             <div class="embeddedItem__imgBox" style="background-color:#efefef;">
                 <img src="${img.image_link}" alt="${
@@ -454,31 +457,6 @@
         `
         )
         .join("");
-      // const items = fakeData
-      //   .map(
-      //     (img) =>
-      //       `
-      //     <a class="embeddedItem slickSlide" href="${img.link})" target="_blank">
-      //         <div class="embeddedItem__img">
-      //         <div class="embeddedItem__img--tag">
-      //             <div>新品搶先價</div>
-      //             <div>65折</div>
-      //         </div>
-      //         <div style="background-color:#efefef;">
-      //             <img src="${img.src}" alt="${img.alt}" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(80%);opacity:0.8;">
-      //         </div>
-      //         </div>
-      //         <div class="embeddedItemInfo">
-      //             <h3 class="embeddedItemInfo__title">${img.alt}</h3>
-      //             <div class="embeddedItemInfo__content">
-      //                 <p class="embeddedItemInfo__price">$${img.price}</p>
-      //                 <p class="embeddedItemInfo__price--original">$${img.original_price}</p>
-      //             </div>
-      //         </div>
-      //     </a>
-      //     `
-      //   )
-      //   .join("");
       $(".embeddedAdImgContainer").html(items);
 
       $(".embeddedAdImgContainer").slick({
