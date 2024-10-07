@@ -382,7 +382,7 @@
             scopedCSS;
         });
     });
-    $(".embeddedItem").on("click", function () {
+    $(document).on("click", ".embeddedItem", function () {
       console.log("Embedded item clicked");
       console.log($(this));
       const title = $(this).data("title"); // 取得 data-title 屬性
@@ -396,7 +396,7 @@
         event_value: link,
       });
     });
-    $(".a-left").on("click", function () {
+    $(document).on("click", ".a-left", function () {
       // 觸發 Google Analytics 的事件追蹤
       console.log("Embedded item clicked left");
       gtag("event", "click_embedded_item", {
@@ -406,7 +406,7 @@
         event_value: 'left',
       });
     });
-    $(".a-right").on("click", function () {
+    $(document).on("click", ".a-right", function () {
       // 觸發 Google Analytics 的事件追蹤
       console.log("Embedded item clicked right");
       gtag("event", "click_embedded_item", {
