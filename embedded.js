@@ -1,4 +1,4 @@
-(function ($) {
+;(function ($) {
   // 動態添加 Google 字體連結
   var googleFontLink = document.createElement("link");
   googleFontLink.rel = "preconnect";
@@ -381,38 +381,36 @@
           document.getElementById(-"embedded-ad-bootstrap-scoped").textContent =
             scopedCSS;
         });
+    });
+    $(".embeddedItem").on("click", function () {
+      console.log($(this));
+      const title = $(this).data("title"); // 取得 data-title 屬性
+      const link = $(this).data("link"); // 取得 data-link 屬性
 
-      $(".embeddedItem").on("click", function () {
-        console.log($(this));
-        const title = $(this).data("title"); // 取得 data-title 屬性
-        const link = $(this).data("link"); // 取得 data-link 屬性
-
-        // 觸發 Google Analytics 的事件追蹤
-        gtag("event", "click_embedded_item", {
-          send_to: "G-PQQRC09ZPS",
-          event_category: "embedded",
-          event_label: title,
-          event_value: link,
-        });
+      // 觸發 Google Analytics 的事件追蹤
+      gtag("event", "click_embedded_item", {
+        send_to: "G-PQQRC09ZPS",
+        event_category: "embedded",
+        event_label: title,
+        event_value: link,
       });
-
-      $(".a-left").on("click", function () {
-        // 觸發 Google Analytics 的事件追蹤
-        gtag("event", "click_embedded_item", {
-          send_to: "G-PQQRC09ZPS",
-          event_category: "embedded",
-          event_label: 'arrow',
-          event_value: 'left',
-        });
+    });
+    $(".a-left").on("click", function () {
+      // 觸發 Google Analytics 的事件追蹤
+      gtag("event", "click_embedded_item", {
+        send_to: "G-PQQRC09ZPS",
+        event_category: "embedded",
+        event_label: 'arrow',
+        event_value: 'left',
       });
-      $(".a-right").on("click", function () {
-        // 觸發 Google Analytics 的事件追蹤
-        gtag("event", "click_embedded_item", {
-          send_to: "G-PQQRC09ZPS",
-          event_category: "embedded",
-          event_label: 'arrow',
-          event_value: 'right',
-        });
+    });
+    $(".a-right").on("click", function () {
+      // 觸發 Google Analytics 的事件追蹤
+      gtag("event", "click_embedded_item", {
+        send_to: "G-PQQRC09ZPS",
+        event_category: "embedded",
+        event_label: 'arrow',
+        event_value: 'right',
       });
     });
     $(window).on("scroll", function () {
