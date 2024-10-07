@@ -1,4 +1,4 @@
-;(function ($) {
+(function ($) {
   // 動態添加 Google 字體連結
   var googleFontLink = document.createElement("link");
   googleFontLink.rel = "preconnect";
@@ -359,18 +359,6 @@
 
     $(function () {
       console.log("DOM is ready");
-      $('.embeddedItem').on('click', function () {
-        const title = $(this).data('title'); // 取得 data-title 屬性
-        const link = $(this).data('link');   // 取得 data-link 屬性
-
-        // 觸發 Google Analytics 的事件追蹤
-        gtag('event', 'click_embedded_item', {
-          'send_to': 'G-PQQRC09ZPS',
-          'event_category': 'embedded',
-          'event_label': title,
-          'event_value': link,
-        });
-      })
       // Fetch the Bootstrap CSS from CDN
       fetch(
         "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -393,11 +381,44 @@
           document.getElementById(-"embedded-ad-bootstrap-scoped").textContent =
             scopedCSS;
         });
+
+      $(".embeddedItem").on("click", function () {
+        console.log($(this));
+        const title = $(this).data("title"); // 取得 data-title 屬性
+        const link = $(this).data("link"); // 取得 data-link 屬性
+
+        // 觸發 Google Analytics 的事件追蹤
+        gtag("event", "click_embedded_item", {
+          send_to: "G-PQQRC09ZPS",
+          event_category: "embedded",
+          event_label: title,
+          event_value: link,
+        });
+      });
+
+      $(".a-left").on("click", function () {
+        // 觸發 Google Analytics 的事件追蹤
+        gtag("event", "click_embedded_item", {
+          send_to: "G-PQQRC09ZPS",
+          event_category: "embedded",
+          event_label: 'arrow',
+          event_value: 'left',
+        });
+      });
+      $(".a-right").on("click", function () {
+        // 觸發 Google Analytics 的事件追蹤
+        gtag("event", "click_embedded_item", {
+          send_to: "G-PQQRC09ZPS",
+          event_category: "embedded",
+          event_label: 'arrow',
+          event_value: 'right',
+        });
+      });
     });
     $(window).on("scroll", function () {
-       if ($('.embeddedAdImgContainer').hasClass('slick-initialized')) {
-          $(".embeddedAdImgContainer").slick("slickPlay"); // 重新啟動自動播放
-       }
+      if ($(".embeddedAdImgContainer").hasClass("slick-initialized")) {
+        $(".embeddedAdImgContainer").slick("slickPlay"); // 重新啟動自動播放
+      }
     });
     const getEmbeddedAds = () => {
       const requestData = {
@@ -442,7 +463,9 @@
         .map(
           (img) =>
             `
-        <a class="embeddedItem slickSlide" href="${img.link}" target="_blank" data-title="${img.title}" data-link="${img.link}">
+        <a class="embeddedItem slickSlide" href="${
+          img.link
+        }" target="_blank" data-title="${img.title}" data-link="${img.link}">
             <div class="embeddedItem__img">
             <div class="embeddedItem__imgBox" style="background-color:#efefef;">
                 <img src="${img.image_link}" alt="${
