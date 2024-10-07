@@ -368,7 +368,7 @@
           'send_to': 'G-PQQRC09ZPS',
           'event_category': 'embedded',
           'event_label': title,
-          'value': link,
+          'event_value': link,
         });
       })
       // Fetch the Bootstrap CSS from CDN
