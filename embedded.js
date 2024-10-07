@@ -365,6 +365,7 @@
 
         // 觸發 Google Analytics 的事件追蹤
         gtag('event', 'click_embedded_item', {
+          'send_to': 'G-PQQRC09ZPS',
           'embedded_title': title,
           'embedded_link': link,
         });
@@ -440,7 +441,7 @@
         .map(
           (img) =>
             `
-        <a class="embeddedItem slickSlide" href="${img.link})" target="_blank" data-title="${img.title}" data-link="${img.link}">
+        <a class="embeddedItem slickSlide" href="${img.link}" target="_blank" data-title="${img.title}" data-link="${img.link}">
             <div class="embeddedItem__img">
             <div class="embeddedItem__imgBox" style="background-color:#efefef;">
                 <img src="${img.image_link}" alt="${
