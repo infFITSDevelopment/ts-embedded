@@ -366,8 +366,9 @@
         // 觸發 Google Analytics 的事件追蹤
         gtag('event', 'click_embedded_item', {
           'send_to': 'G-PQQRC09ZPS',
-          'embedded_title': title,
-          'embedded_link': link,
+          'event_category': 'embedded',
+          'event_label': title,
+          'value': link,
         });
       })
       // Fetch the Bootstrap CSS from CDN
