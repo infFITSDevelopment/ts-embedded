@@ -142,6 +142,15 @@
 -o-transform: translate3d(0, 0, 0);
 transform: translate3d(0, 0, 0);
 transition-delay: 10ms;
+
+/* Webkit 内核浏览器 (Safari, Chrome, etc.) */
+-webkit-transition-delay: 10ms;
+
+/* Mozilla 内核浏览器 (Firefox) */
+-moz-transition-delay: 10ms;
+
+/* Opera 内核浏览器 */
+-o-transition-delay: 10ms;
 }
 @media (min-width: 768px) {
   .embeddedAdContainer .embeddedAdImgContainer .slick-prev,
@@ -387,7 +396,7 @@ transition-delay: 10ms;
               if (p2.startsWith("@") || p2.startsWith(":root")) {
                 return match;
               }
-              return p1 + "#embedded-ad-container " + p2 + " {";
+              return p1 + ".embeddedAdContainer " + p2 + " {";
             }
           );
 
@@ -597,7 +606,7 @@ transition-delay: 10ms;
 
     // console.log("DOM is ready");
     let embeddedContainer = `
-        <div class="embeddedAdContainer" id="embedded-ad-container">
+        <div class="embeddedAdContainer">
         <h3 class="embeddedAdContainer__title">您可能也會喜歡</h3>
         <div class="embeddedAdImgContainer carouselContainer ">
             <!-- ad 內容將由 JavaScript 動態生成 -->
