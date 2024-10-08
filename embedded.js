@@ -136,13 +136,7 @@
 .embeddedAdContainer .embeddedAdImgContainer .slick-slide{
   will-change: transform;
 }
-.embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
-.embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list {
-  transition-delay: 10ms;
-  -webkit-transition-delay: 10ms;
-  -moz-transition-delay: 10ms;
-  -o-transition-delay: 10ms;
-}
+
 @media (min-width: 768px) {
   .embeddedAdContainer .embeddedAdImgContainer .slick-prev,
   .embeddedAdContainer .embeddedAdImgContainer .slick-next {
