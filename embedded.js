@@ -161,6 +161,13 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
+  .embeddedAdContainer .embeddedAdImgContainer .slick-slide{
+    will-change: transform;
+  }
+  .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
+  .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list {
+    transition-delay: 10ms;
+  }
 }
 .embeddedAdContainer .embeddedAdImgContainer .slick-slider {
   position: relative;
