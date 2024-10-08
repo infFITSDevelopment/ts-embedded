@@ -133,15 +133,19 @@
     overflow: visible;
   }
 }
-.embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
-.embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list
-{
--webkit-transform: translate3d(0, 0, 0);
--moz-transform: translate3d(0, 0, 0);
--ms-transform: translate3d(0, 0, 0);
--o-transform: translate3d(0, 0, 0);
-transform: translate3d(0, 0, 0);
-}
+  .embeddedAdContainer .embeddedAdImgContainer .slick-slide,
+  .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
+  .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 @media (min-width: 768px) {
   .embeddedAdContainer .embeddedAdImgContainer .slick-prev,
   .embeddedAdContainer .embeddedAdImgContainer .slick-next {
@@ -158,19 +162,19 @@ transform: translate3d(0, 0, 0);
     top: 45%;
     right: -32px;
   }
-  .embeddedAdContainer .embeddedAdImgContainer .slick-slide,
-  .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
-  .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-perspective: 1000;
-    -ms-perspective: 1000;
-    perspective: 1000;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
+  // .embeddedAdContainer .embeddedAdImgContainer .slick-slide,
+  // .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
+  // .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list {
+  //   -webkit-transform: translate3d(0, 0, 0);
+  //   transform: translate3d(0, 0, 0);
+  //   -webkit-transform: translateZ(0);
+  //   transform: translateZ(0);
+  //   -webkit-perspective: 1000;
+  //   -ms-perspective: 1000;
+  //   perspective: 1000;
+  //   -webkit-backface-visibility: hidden;
+  //   backface-visibility: hidden;
+  // }
 }
 .embeddedAdContainer .embeddedAdImgContainer .slick-slider {
   position: relative;
