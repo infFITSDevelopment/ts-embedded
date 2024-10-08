@@ -133,9 +133,6 @@
     overflow: visible;
   }
 }
-.embeddedAdContainer .embeddedAdImgContainer .slick-slide{
-  will-change: transform;
-}
 
 @media (min-width: 768px) {
   .embeddedAdContainer .embeddedAdImgContainer .slick-prev,
