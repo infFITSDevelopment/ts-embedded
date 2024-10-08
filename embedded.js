@@ -544,7 +544,7 @@ transition-delay: 10ms;
               pauseOnHover: false,
               arrows: false,
               dots: false,
-              useCSS: true,
+              useCSS: false,
               // useTransform: false,
               touchThreshold: 1000,
             },
