@@ -141,16 +141,6 @@
 -ms-transform: translate3d(0, 0, 0);
 -o-transform: translate3d(0, 0, 0);
 transform: translate3d(0, 0, 0);
-transition-delay: 10ms;
-
-/* Webkit 内核浏览器 (Safari, Chrome, etc.) */
--webkit-transition-delay: 10ms;
-
-/* Mozilla 内核浏览器 (Firefox) */
--moz-transition-delay: 10ms;
-
-/* Opera 内核浏览器 */
--o-transition-delay: 10ms;
 }
 @media (min-width: 768px) {
   .embeddedAdContainer .embeddedAdImgContainer .slick-prev,
