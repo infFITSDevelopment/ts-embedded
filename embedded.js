@@ -167,6 +167,9 @@
   .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
   .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list {
     transition-delay: 10ms;
+    -webkit-transition-delay: 10ms;
+    -moz-transition-delay: 10ms;
+    -o-transition-delay: 10ms;
   }
 }
 .embeddedAdContainer .embeddedAdImgContainer .slick-slider {
