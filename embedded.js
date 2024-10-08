@@ -133,7 +133,16 @@
     overflow: visible;
   }
 }
-
+.embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
+.embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list
+{
+-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+-ms-transform: translate3d(0, 0, 0);
+-o-transform: translate3d(0, 0, 0);
+transform: translate3d(0, 0, 0);
+transition-delay: 10ms;
+}
 @media (min-width: 768px) {
   .embeddedAdContainer .embeddedAdImgContainer .slick-prev,
   .embeddedAdContainer .embeddedAdImgContainer .slick-next {
@@ -527,7 +536,7 @@
               arrows: false,
               dots: false,
               useCSS: true,
-              useTransform: false,
+              // useTransform: false,
               touchThreshold: 1000,
             },
           },
