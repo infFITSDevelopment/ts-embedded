@@ -133,6 +133,16 @@
     overflow: visible;
   }
 }
+.embeddedAdContainer .embeddedAdImgContainer .slick-slide{
+  will-change: transform;
+}
+.embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
+.embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list {
+  transition-delay: 10ms;
+  -webkit-transition-delay: 10ms;
+  -moz-transition-delay: 10ms;
+  -o-transition-delay: 10ms;
+}
 @media (min-width: 768px) {
   .embeddedAdContainer .embeddedAdImgContainer .slick-prev,
   .embeddedAdContainer .embeddedAdImgContainer .slick-next {
@@ -161,16 +171,6 @@
     perspective: 1000;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-  }
-  .embeddedAdContainer .embeddedAdImgContainer .slick-slide{
-    will-change: transform;
-  }
-  .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-track,
-  .embeddedAdContainer .embeddedAdImgContainer .slick-slider .slick-list {
-    transition-delay: 10ms;
-    -webkit-transition-delay: 10ms;
-    -moz-transition-delay: 10ms;
-    -o-transition-delay: 10ms;
   }
 }
 .embeddedAdContainer .embeddedAdImgContainer .slick-slider {
@@ -367,9 +367,9 @@
 }
   `;
     document.head.appendChild(customCSS);
-    $('body').css('display', 'none');
-    $('body').offset(); // 觸發重排
-    $('body').css('display', '');
+    $("body").css("display", "none");
+    $("body").offset(); // 觸發重排
+    $("body").css("display", "");
 
     $(function () {
       console.log("DOM is ready");
@@ -464,12 +464,12 @@
           });
           if (window.innerWidth > 992) {
             if (jsonData.length >= 3) {
-              $('.embeddedAdContainer').show()
+              $(".embeddedAdContainer").show();
               updatePopAd(jsonData);
             }
-          }else{
+          } else {
             if (jsonData.length >= 4) {
-              $('.embeddedAdContainer').show()
+              $(".embeddedAdContainer").show();
               updatePopAd(jsonData);
             }
           }
