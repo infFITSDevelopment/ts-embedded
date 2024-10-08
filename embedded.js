@@ -52,6 +52,7 @@
   padding: 24px;
   margin: 0 auto;
   width: 100%;
+  display: none;
 }
 @media (min-width: 768px) {
   .embeddedAdContainer {
@@ -366,6 +367,9 @@
 }
   `;
     document.head.appendChild(customCSS);
+    $('body').css('display', 'none');
+    $('body').offset(); // 觸發重排
+    $('body').css('display', '');
 
     $(function () {
       console.log("DOM is ready");
@@ -409,8 +413,8 @@
       gtag("event", "click_embedded_item", {
         send_to: "G-PQQRC09ZPS",
         event_category: "embedded",
-        event_label: 'arrow-left',
-        event_value: 'left',
+        event_label: "arrow-left",
+        event_value: "left",
       });
     });
     $(document).on("click", ".a-right", function () {
@@ -418,8 +422,8 @@
       gtag("event", "click_embedded_item", {
         send_to: "G-PQQRC09ZPS",
         event_category: "embedded",
-        event_label: 'arrow-right',
-        event_value: 'right',
+        event_label: "arrow-right",
+        event_value: "right",
       });
     });
     $(window).on("scroll", function () {
@@ -432,7 +436,7 @@
         Brand: "PME",
         LGVID: "2Zdl1XTfRX3FdvPqGEhs",
         MRID: "",
-        recom_num: "12",
+        recom_num: "4",
       };
       const options = {
         method: "POST",
@@ -458,7 +462,17 @@
             ).toLocaleString();
             return newItem;
           });
-          updatePopAd(jsonData);
+          if (window.innerWidth > 992) {
+            if (jsonData.length >= 3) {
+              $('.embeddedAdContainer').show()
+              updatePopAd(jsonData);
+            }
+          }else{
+            if (jsonData.length >= 4) {
+              $('.embeddedAdContainer').show()
+              updatePopAd(jsonData);
+            }
+          }
         })
         .catch((err) => {
           console.error(err);
@@ -522,7 +536,7 @@
               arrows: false,
               dots: false,
               useCSS: true,
-              useTransform: false,
+              // useTransform: false,
               touchThreshold: 1000,
             },
           },
